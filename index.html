@@ -1,10 +1,347 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>My Homepage</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Semin Ibisevic: Selected Work and References</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper:        #fbfaf4;
+      --ink:          #141414;
+      --ink-soft:     #2c2a26;
+      --rule:         #1a1a1a;
+      --muted:        #5a5853;
+      --serif:        "Lora", "EB Garamond", "Source Serif Pro", "Georgia", serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    body {
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "liga", "kern", "onum";
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    .paper {
+      max-width: 100%;
+      padding: 1.75rem 1.25rem 4rem;
+      margin: 0 auto;
+    }
+
+    .title-block {
+      text-align: center;
+      margin: 1.5rem 0 2.25rem;
+    }
+
+    .title-block h1 {
+      font-weight: 700;
+      font-size: 1.55rem;
+      line-height: 1.25;
+      letter-spacing: 0.005em;
+      margin: 0 0 1.1rem;
+      hyphens: none;
+    }
+
+    .authors {
+      font-size: 1rem;
+      margin: 0 0 0.45rem;
+      line-height: 1.4;
+    }
+
+    .authors sup {
+      font-size: 0.78em;
+      vertical-align: super;
+      line-height: 0;
+      margin-left: 1px;
+    }
+
+    .affiliation {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin: 0 0 1rem;
+      line-height: 1.4;
+    }
+
+    .affiliation sup {
+      font-style: normal;
+      font-size: 0.78em;
+      vertical-align: super;
+      line-height: 0;
+      margin-right: 2px;
+    }
+
+    .pubdate {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .abstract {
+      margin: 1.75rem auto 2.5rem;
+      max-width: 92%;
+      font-size: 0.94rem;
+      line-height: 1.55;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .abstract h2 {
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin: 0 0 0.6rem;
+      font-variant-caps: small-caps;
+      text-transform: lowercase;
+    }
+
+    .abstract p {
+      margin: 0;
+      text-indent: 0;
+    }
+
+    h2.section {
+      font-weight: 700;
+      line-height: 1.25;
+      hyphens: none;
+      text-align: left;
+      font-size: 1.15rem;
+      margin: 2.1rem 0 0.6rem;
+    }
+
+    h2.section .num {
+      font-weight: 700;
+      margin-right: 0.55em;
+      font-variant-numeric: lining-nums;
+    }
+
+    .entries {
+      list-style: none;
+      padding: 0;
+      margin: 0.2rem 0 0;
+    }
+
+    .entries li {
+      margin-bottom: 0.95rem;
+      text-align: left;
+      hyphens: auto;
+      line-height: 1.5;
+    }
+
+    .entries .when {
+      font-style: italic;
+      color: var(--muted);
+      margin-right: 0.3em;
+    }
+
+    .entries .title {
+      font-style: italic;
+    }
+
+    .entries .desc {
+      color: var(--ink-soft);
+    }
+
+    .entries .src {
+      display: block;
+      font-size: 0.78em;
+      color: var(--muted);
+      margin-top: 0.1rem;
+      font-variant-numeric: oldstyle-nums;
+      letter-spacing: 0.005em;
+      word-break: break-word;
+    }
+
+    .entries a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 0.5px solid rgba(20,20,20,0.35);
+      word-break: break-word;
+    }
+    .entries a:hover {
+      border-bottom-color: var(--ink);
+    }
+    .entries .src a {
+      border-bottom: none;
+      color: inherit;
+    }
+    .entries .src a:hover {
+      color: var(--ink);
+    }
+
+    .colophon {
+      margin-top: 3rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+      font-style: italic;
+      letter-spacing: 0.02em;
+    }
+
+    .latex-logo { font-style: normal; letter-spacing: -0.05em; }
+    .latex-logo .a {
+      text-transform: uppercase;
+      font-size: 0.72em;
+      vertical-align: 0.28em;
+      margin: 0 -0.18em 0 -0.12em;
+    }
+    .latex-logo .e {
+      text-transform: uppercase;
+      vertical-align: -0.15em;
+      margin: 0 -0.08em 0 -0.06em;
+      font-size: 1em;
+    }
+
+    @media (min-width: 640px) {
+      body {
+        font-size: 17px;
+        line-height: 1.6;
+      }
+      .paper {
+        max-width: 38rem;
+        padding: 4rem 1.5rem 5rem;
+      }
+      .title-block { margin: 1rem 0 2.75rem; }
+      .title-block h1 {
+        font-size: 1.95rem;
+        margin-bottom: 1.4rem;
+      }
+      .authors { font-size: 1.05rem; }
+      .affiliation { font-size: 0.93rem; }
+      .abstract {
+        max-width: 90%;
+        font-size: 0.96rem;
+      }
+      h2.section { font-size: 1.2rem; margin-top: 2.4rem; }
+    }
+
+    @media (min-width: 1024px) {
+      body { font-size: 18px; }
+      .paper { padding-top: 5rem; }
+    }
+
+    @media print {
+      :root { --paper: #fff; }
+      body { font-size: 11pt; }
+      .paper { max-width: 6.5in; padding: 0.75in; }
+      .colophon { display: none; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, I’m Semin</h1>
-  <p>Welcome to my GitHub homepage.</p>
+  <article class="paper">
+
+    <header class="title-block">
+      <h1>Selected Work and References</h1>
+      <p class="authors">
+        Semin Ibisevic
+      </p>
+      <p class="affiliation">
+        Next Gate Tech, Luxembourg &amp; London
+      </p>
+      <p class="pubdate">May 12, 2026</p>
+    </header>
+
+    <section class="abstract" aria-label="Abstract">
+      <h2>Abstract</h2>
+      <p>
+        Semin Ibisevic is co-founder and Chief Technology Officer of
+        <em>Next Gate Tech</em>, a fintech he established
+        in 2019 together with Davide Martucci. He holds a Master's degree
+        in Quantitative Finance and a Bachelor's in Econometrics and
+        Operations Research, both from Erasmus University Rotterdam. Prior
+        to founding Next Gate Tech, he served as Technology Lead and
+        Quantitative Strategist at Next Gate Capital, with earlier roles at
+        Euronext and AEGON Asset Management.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="section"><span class="num">1</span>Latest</h2>
+      <ul class="entries">
+        <li>
+          <span class="when">(March 2026)</span>
+          <a target="_blank" rel="noopener noreferrer" href="https://nextgatetech.com/insights/202603-product-vision-agentic-ai-ecosystem"><span class="title">The Next Generation of Investment Operations: Why Agentic AI Needs the Right Ecosystem.</span></a>
+          <span class="src">nextgatetech.com / insights</span>
+        </li>
+        <li>
+          <span class="when">(Oct 2024)</span>
+          <a target="_blank" rel="noopener noreferrer" href="https://nextgatetech.com/insights/202410-rd-innovation-tax-credit-luxembourg"><span class="title">R&amp;D Grant Award.</span></a>
+          <span class="desc">A €2.48M Luxembourg Government R&amp;D grant, part of a €5.5M AI research initiative, to develop AI capabilities for investment fund operations.</span>
+          <span class="src">nextgatetech.com / insights</span>
+        </li>
+        <li>
+          <span class="when">(2023)</span>
+          <a target="_blank" rel="noopener noreferrer" href="https://cloud.google.com/customers/nextgatetech"><span class="title">Next Gate Tech and Google Cloud: A game-changer in fund industry technology operations.</span></a>
+          <span class="desc">Google Cloud customer story on Next Gate Tech's full-stack use of Google Cloud across compute, data, AI, and security to power its fund-industry operations.</span>
+          <span class="src">cloud.google.com / customers</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="section"><span class="num">2</span>Research &amp; Software</h2>
+      <ul class="entries">
+        <li>
+          <span class="when">(Jul 2013)</span>
+          <a target="_blank" rel="noopener noreferrer" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2909072"><span class="title">Does Combining Models Help with the Pricing of European Options?</span></a>
+          <span class="desc">Examines whether ensemble approaches improve European option pricing accuracy.</span>
+          <span class="src">papers.ssrn.com</span>
+        </li>
+        <li>
+          <span class="when">(2011)</span>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.mathworks.com/matlabcentral/fileexchange/33979-diebold-mariano-test-statistic"><span class="title">Diebold–Mariano Test Statistic.</span></a>
+          <span class="desc">Implementation of the 1995 test for comparing forecast accuracy with Newey–West autocorrelation correction.</span>
+          <span class="src">MATLAB File Exchange</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="section"><span class="num">3</span>Profiles</h2>
+      <ul class="entries">
+        <li>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.crunchbase.com/organization/next-gate-tech"><span class="title">Next Gate Tech: Company Profile and Funding History.</span></a>
+          <span class="desc">Funding rounds (~$14.1M total), investor list (MiddleGame Ventures, Expon Capital, Deutsche Börse Group, EIF), and company facts.</span>
+          <span class="src">crunchbase.com</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="section"><span class="num">4</span>Contact</h2>
+      <ul class="entries">
+        <li>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/seminibisevic"><span class="title">LinkedIn.</span></a>
+          <span class="src">linkedin.com/in/seminibisevic</span>
+        </li>
+        <li>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/SAIbisevic"><span class="title">GitHub.</span></a>
+          <span class="src">github.com/SAIbisevic</span>
+        </li>
+      </ul>
+    </section>
+
+    <p class="colophon">
+      Typeset in HTML, in the spirit of
+      <span class="latex-logo">L<span class="a">a</span>T<span class="e">e</span>X</span>.
+    </p>
+
+  </article>
 </body>
 </html>
